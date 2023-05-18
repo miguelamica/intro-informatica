@@ -1,28 +1,54 @@
-def recorrerStr(frase):
-    res=""
-    for i in range(0,len(frase)):
-        rta=frase[i]
-        res=res+rta
-    return res
 def esLetra(frase):
-    def esLetra(car):
     res = False
-    if ((car>="a" and car <="z") or (car>="A" and car <="Z")):
-        res=True
+    acentos = frase in "áéíóúüñÁÉÍÓÚÜÑ"
+    i=0
+    while i<len(frase):
+        if ((frase[i]>='a'and frase[i]<='z') or (frase[i]>='A' and frase[i]<='Z') or acentos  ):
+            res = True
+        return res
+
+def carAMinu(frase):
+    i=0
+    res=""
+    while i<len(frase):
+        if frase[i]>='A' and frase[i]<='Z':
+            frase2=chr(ord (frase[i])+32)
+            res=res+frase2
+            i+=1
+        else:
+            letra=frase[i]
+            res=res+letra
+            i+=1
+    return res
+
+def recorrerStr(frase):
+    i=0
+    res=""
+    frase1=carAMinu(frase)
+    while i<len(frase1):
+        if esLetra(frase1[i])==True:
+            res=res+frase1[i]
+            i+=1
+        else:
+            i+=1
     return res
     
 def fraseReves(frase):
     i=len(frase)-1
     res=""
+    frase1=carAMinu(frase)
     while i!=-1:
-        rta=frase[i]
-        res=res+rta
-        i=i-1
+        if frase1[i]==" " or esLetra(frase1[i])==False:
+            i=i-1
+        else:
+            rta=frase1[i]
+            res=res+rta
+            i=i-1
     return res
 
 def esPalindrola(frase):
-    frase1=recorrerStr(frase)
-    frase2=fraseReves(frase)
+    frase1=fraseReves(frase)
+    frase2=recorrerStr(frase)
     if frase1==frase2:
         rta=True
     else:
