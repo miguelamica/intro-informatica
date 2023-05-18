@@ -4,6 +4,8 @@ def recorrerStr(frase):
         rta=frase[i]
         res=res+rta
     return res
+def esLetra(frase): 
+    
 def fraseReves(frase):
     i=len(frase)-1
     res=""
