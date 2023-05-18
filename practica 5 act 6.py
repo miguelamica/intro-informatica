@@ -4,7 +4,12 @@ def recorrerStr(frase):
         rta=frase[i]
         res=res+rta
     return res
-def esLetra(frase): 
+def esLetra(frase):
+    def esLetra(car):
+    res = False
+    if ((car>="a" and car <="z") or (car>="A" and car <="Z")):
+        res=True
+    return res
     
 def fraseReves(frase):
     i=len(frase)-1
