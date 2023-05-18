@@ -5,7 +5,7 @@ def esLetra(frase):
     while i<len(frase):
         if ((frase[i]>='a'and frase[i]<='z') or (frase[i]>='A' and frase[i]<='Z') or acentos  ):
             res = True
-        return res
+    return res
 
 def carAMinu(frase):
     i=0
