@@ -6,28 +6,14 @@ def cargarLista():                    #<>
         lista.append(int(num))
     lista.pop(-1)
     return lista
-
-def mayor(lst):
-    i=0
-    mayor=lst[i]
-    while i<len(lst):
-        if lst[i]>mayor:
-            mayor=lst[i]
-        i+=1
-    return mayor
-
+    
 def ordenarLst(lst):
-    i=0
-    x=0
-    y=0
-    mayor=mayor(lst)
-    while i<len(lst):
-        while lst[i]<=mayor:
-            
-            
-
-
-            
+    for x in range(len(lst)-1):
+        for i in range(len(lst)-1):
+            if lst[i]>lst[i+1]:
+                num=lst[i]
+                lst[i]=lst[i+1]
+                lst[i+1]=num           
         
 def main():
     lst=cargarLista()
