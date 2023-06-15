@@ -1,0 +1,26 @@
+def agregarDicEle(di,a,b):
+    di[a]=b
+    
+    
+def diccionario():
+    di={}
+    clave=""
+    while clave!=".":
+        clave=input("Ingrese un numero entero (o un punto(.) para terminar): ")
+        valor=input("Ingrese el mismo numero escrito (o un punto(.) para terminar): ")
+        agregarDicEle(di,clave,valor)
+    di.pop(".")
+    return di
+    
+def main():
+    di=diccionario()
+    num=int(input("ingrese un numero entero (o un punto (.):"))
+    while num !=".":
+        if num in di:
+            print(di[num])
+        if num not in di:
+            num=int(input("error. ingrese un numero entero (o un punto (.):"))
+            print(di[num])
+            
+main()
+    
